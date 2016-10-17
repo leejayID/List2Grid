@@ -5,7 +5,7 @@
 ![列表视图](http://upload-images.jianshu.io/upload_images/1321491-b9288719a7cbb41f.jpg)
 ![网格视图](http://upload-images.jianshu.io/upload_images/1321491-44b84a69a0745a5e.jpg)
 
-很多人看到这个，第一眼想到的是用``` TableView ```和``` CollectionView ```来做切换，笔者刚开始也是认为这么做，后来发现还有一个非常的简单方法，就可以实现这个功能。
+很多人看到这个，第一眼想到的是用```objc TableView ```和```objc CollectionView ```来做切换，笔者刚开始也是认为这么做，后来发现还有一个非常的简单方法，就可以实现这个功能。
 ## 正文
 
 * 首先创建一个``` CollectionView ```。
@@ -34,7 +34,7 @@
     return _collectionView;
 }
 ```
-* 然后去京东商城抓取``` json ```数据，再去解析数据装入模型，```objectWithDictionary:```是将字典转化为模型，这个工具是我用* Runtime *写的，一行代码解析数据，具体使用方法可以参考我简书上另一篇文章[【Objective-C中的Runtime】](http://www.jianshu.com/p/3e050ec3b759)。
+* 然后去京东商城抓取```objc json ```数据，再去解析数据装入模型，```objc objectWithDictionary: ```是将字典转化为模型，这个工具是我用* Runtime *写的，一行代码解析数据，具体使用方法可以参考我简书上另一篇文章[【Objective-C中的Runtime】](http://www.jianshu.com/p/3e050ec3b759)。
 
 ```objc
 [self.view addSubview:self.collectionView];
@@ -48,10 +48,11 @@ for (id obj in products) {
     [self.dataSource addObject:[GridListModel objectWithDictionary:obj]];
 }
 ```
-*  再去自定义``` CollectionViewCell ```，给``` cell ```添加一个属性``` isGrid ```，用来判断是列表还是格子视图。
+*  再去自定义```objc CollectionViewCell ```，给```objc cell ```添加一个属性```objc isGrid ```，用来判断是列表还是格子视图。
+
 .h文件：
 
-```
+```objc
 #import <UIKit/UIKit.h>
 
 #define kCellIdentifier_CollectionViewCell @"GridListCollectionViewCell"
@@ -161,9 +162,10 @@ for (id obj in products) {
 这样子就大体实现了列表视图和网格视图的相互切换，是不是炒鸡简单。
 
 Demo 运行效果的Gif
+
 ![](./Untitled.gif)
 
 ## 最后
 由于笔者水平有限，文中如果有错误的地方，还望大神指出。或者有更好的方法和建议，我们可以一起交流。
-附上本文的 demo 下载链接，[【GitHub】](https://github.com/leejayID/List2Grid)，配合demo一起看文章，效果会更佳。
-如果你看完后觉得对你有所帮助，还望在GitHub上点个star。赠人玫瑰，手有余香。
+附上本文的 demo 下载链接，[【GitHub】](https://github.com/leejayID/List2Grid)，配合 demo 一起看文章，效果会更佳。
+如果你看完后觉得对你有所帮助，还望在 GitHub 上点个 star。赠人玫瑰，手有余香。
