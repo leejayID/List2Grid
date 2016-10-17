@@ -34,21 +34,29 @@
     return _collectionView;
 }
 ```
-* 然后去京东商城抓取```objc json ```数据，再去解析数据装入模型，```objc objectWithDictionary: ```是将字典转化为模型，这个工具是我用* Runtime *写的，一行代码解析数据，具体使用方法可以参考我简书上另一篇文章[【Objective-C中的Runtime】](http://www.jianshu.com/p/3e050ec3b759)。
+* 然后去京东商城抓取``` json ```数据，再去解析数据装入模型，``` objectWithDictionary: ```是将字典转化为模型，这个工具是我用 *Runtime* 写的，一行代码解析数据，具体使用方法可以参考我简书上另一篇文章[【Objective-C中的Runtime】](http://www.jianshu.com/p/3e050ec3b759)。
 
 ```objc
-[self.view addSubview:self.collectionView];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
 
-NSString *path = [[NSBundle mainBundle] pathForResource:@"product" ofType:@"json"];
-NSData *data = [NSData dataWithContentsOfFile:path];
-NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+    // 默认列表视图
+    _isGrid = NO;
 
-NSArray *products = dict[@"wareInfo"];
-for (id obj in products) {
-    [self.dataSource addObject:[GridListModel objectWithDictionary:obj]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"product" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+
+    [self.view addSubview:self.collectionView];
+
+    NSArray *products = dict[@"wareInfo"];
+    for (id obj in products) {
+        [self.dataSource addObject:[GridListModel objectWithDictionary:obj]];
+    }
 }
 ```
-*  再去自定义```objc CollectionViewCell ```，给```objc cell ```添加一个属性```objc isGrid ```，用来判断是列表还是格子视图。
+*  再去自定义``` CollectionViewCell ```，给``` cell ```添加一个属性``` isGrid ```，用来判断是列表还是格子视图。
 
 .h文件：
 
@@ -167,5 +175,7 @@ Demo 运行效果的Gif
 
 ## 最后
 由于笔者水平有限，文中如果有错误的地方，还望大神指出。或者有更好的方法和建议，我们可以一起交流。
+
 附上本文的 demo 下载链接，[【GitHub】](https://github.com/leejayID/List2Grid)，配合 demo 一起看文章，效果会更佳。
+
 如果你看完后觉得对你有所帮助，还望在 GitHub 上点个 star。赠人玫瑰，手有余香。
