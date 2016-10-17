@@ -159,7 +159,8 @@ for (id obj in products) {
 ```
 这样子就大体实现了列表视图和网格视图的相互切换，是不是炒鸡简单。
 
-![Demo运行的xiao'guo't.gif](http://upload-images.jianshu.io/upload_images/1321491-5331641918f2e133.gif?imageMogr2/auto-orient/strip)
+Demo 运行效果的Gif
+![](Untitled.gif)
 
 ## 最后
 由于笔者水平有限，文中如果有错误的地方，还望大神指出。或者有更好的方法和建议，我们可以一起交流。
