@@ -34,7 +34,7 @@
     return _collectionView;
 }
 ```
-* 然后去京东商城抓取``` json ```数据，再去解析数据装入模型，```objectWithDictionary:```是将字典转化为模型，这个工具是我用** Runtime **写的，一行代码解析数据，具体使用方法可以参考我简书上另一篇文章[【Objective-C中的Runtime】](http://www.jianshu.com/p/3e050ec3b759)。
+* 然后去京东商城抓取``` json ```数据，再去解析数据装入模型，```objectWithDictionary:```是将字典转化为模型，这个工具是我用* Runtime *写的，一行代码解析数据，具体使用方法可以参考我简书上另一篇文章[【Objective-C中的Runtime】](http://www.jianshu.com/p/3e050ec3b759)。
 
 ```objc
 [self.view addSubview:self.collectionView];
@@ -49,7 +49,6 @@ for (id obj in products) {
 }
 ```
 *  再去自定义``` CollectionViewCell ```，给``` cell ```添加一个属性``` isGrid ```，用来判断是列表还是格子视图。
-
 .h文件：
 
 ```
@@ -162,7 +161,7 @@ for (id obj in products) {
 这样子就大体实现了列表视图和网格视图的相互切换，是不是炒鸡简单。
 
 Demo 运行效果的Gif
-![Usage](./Untitled.gif)
+![](./Untitled.gif)
 
 ## 最后
 由于笔者水平有限，文中如果有错误的地方，还望大神指出。或者有更好的方法和建议，我们可以一起交流。
