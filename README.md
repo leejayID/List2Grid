@@ -4,6 +4,7 @@
 先来看下效果图，下图为京东商城的截图。
 ![列表视图](http://upload-images.jianshu.io/upload_images/1321491-b9288719a7cbb41f.jpg)
 ![网格视图](http://upload-images.jianshu.io/upload_images/1321491-44b84a69a0745a5e.jpg)
+
 很多人看到这个，第一眼想到的是用``` TableView ```和``` CollectionView ```来做切换，笔者刚开始也是认为这么做，后来发现还有一个非常的简单方法，就可以实现这个功能。
 ## 正文
 
@@ -48,6 +49,7 @@ for (id obj in products) {
 }
 ```
 *  再去自定义``` CollectionViewCell ```，给``` cell ```添加一个属性``` isGrid ```，用来判断是列表还是格子视图。
+
 .h文件：
 
 ```
@@ -160,7 +162,7 @@ for (id obj in products) {
 这样子就大体实现了列表视图和网格视图的相互切换，是不是炒鸡简单。
 
 Demo 运行效果的Gif
-![](Untitled.gif)
+![Usage](./Untitled.gif)
 
 ## 最后
 由于笔者水平有限，文中如果有错误的地方，还望大神指出。或者有更好的方法和建议，我们可以一起交流。
