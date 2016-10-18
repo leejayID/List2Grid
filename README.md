@@ -40,7 +40,8 @@
 * 然后去京东商城抓取``` json ```数据，再去解析数据装入模型，``` objectWithDictionary: ```是将字典转化为模型，这个工具是我用 **Runtime** 写的，一行代码解析数据，具体使用方法可以参考我简书上另一篇文章[【Objective-C中的Runtime】](http://www.jianshu.com/p/3e050ec3b759)。
 
 ```objc
-- (void)viewDidLoad {
+- (void)viewDidLoad 
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
@@ -192,6 +193,6 @@ Demo 运行效果的Gif
 ## 最后
 由于笔者水平有限，文中如果有错误的地方，还望大神指出。或者有更好的方法和建议，我们可以一起交流。
 
-附上本文的 demo 下载链接，[【GitHub】](https://github.com/leejayID/List2Grid)，配合 demo 一起看文章，效果会更佳。
+附上本文的 demo 下载链接[【GitHub】](https://github.com/leejayID/List2Grid)、[【Code4App】](http://www.code4app.com/forum.php?mod=viewthread&tid=11041&extra=page%3D1%26filter%3Dsortid%26sortid%3D1)，配合 demo 一起看文章，效果会更佳。
 
 如果你看完后觉得对你有所帮助，还望在 GitHub 上点个 star。赠人玫瑰，手有余香。
